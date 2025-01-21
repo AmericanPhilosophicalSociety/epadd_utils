@@ -15,7 +15,7 @@ def parse_csv(file):
 MODES = Literal['strict', 'verbose', 'mixed']
 
 
-def parse_row(row, delimiter='|', mode: MODES = 'mixed'):
+def parse_row(row, delimiter, mode: MODES = 'mixed'):
     output = []
     if mode != 'mixed':
         # implement non-default methods here
@@ -24,8 +24,8 @@ def parse_row(row, delimiter='|', mode: MODES = 'mixed'):
         for r in row:
             if r == '':
                 continue
-            elif delimiter in row:
-                entries = row.split(delimiter)
+            elif delimiter in r:
+                entries = r.split(delimiter)
                 output = output + entries
             else:
                 output.append(r)
@@ -33,7 +33,7 @@ def parse_row(row, delimiter='|', mode: MODES = 'mixed'):
         return output
 
 
-def process_csv_data(data, delimiter='|', mode: MODES = 'mixed'):
+def process_csv_data(data, delimiter, mode: MODES = 'mixed'):
     '''Returns a list of lists of parsed CSV data'''
     output = []
     for row in data:
