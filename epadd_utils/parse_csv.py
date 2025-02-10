@@ -6,8 +6,7 @@ import click
 def parse_csv(file):
     with open(file, 'r', encoding='utf-8') as f:
         reader = csv.reader(f)
-        # drop first row containing reference text
-        data = [r[1:] for r in reader][1:]
+        data = [r for r in reader][1:]
 
     return data
 
@@ -49,10 +48,16 @@ def generate_textfile(data, path):
     if not path.endswith('.txt'):
         raise ValueError('Invalid file path for output TXT file.')
     with open(path, 'w', encoding='utf-8') as f:
-        for i in data:
-            f.writelines('-- \n')
-            for j in i:
-                f.writelines(f'{j}\n')
+        for n, i in enumerate(data):
+            # handle first case differently
+            if n == 0:
+                f.writelines('-- Archive owner\n')
+                for j in i:
+                    f.writelines(f'{j}\n')
+            else:
+                f.writelines('-- \n')
+                for j in i:
+                    f.writelines(f'{j}\n')
     click.echo('Text file generated successfully.')
 
 
