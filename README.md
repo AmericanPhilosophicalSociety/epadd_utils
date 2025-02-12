@@ -9,7 +9,11 @@ Install the package locally by cloning the repo
 git clone https://github.com/AmericanPhilosophicalSociety/epadd_utils.git
 cd epadd_utils
 ```
+Then, install the requirements:
 
+```
+pip install -r requirements.txt
+```
 Alterntively, download the repo as a Zip file, unzip it, and navigate to the repo using your preferred terminal.
 
 ## Converting ePADD output to a CSV
