@@ -22,6 +22,8 @@ python epadd_utils/parse-email-list.py /path/to/text/file.txt /destination/outpu
 
 ## Converting a CSV to ePADD output
 
+**NOTE**: This script requires a UTF-8 encoded CSV.
+
 Run the following command, specifying your desired input and output files:
 
 ```
