@@ -21,7 +21,7 @@ Alterntively, download the repo as a Zip file, unzip it, and navigate to the rep
 Run the following command, specifying your desired input and output files:
 
 ```
-python epadd_utils/parse-email-list.py /path/to/text/file.txt /destination/output.csv
+python epadd_utils/parse_email_list.py /path/to/text/file.txt /destination/output.csv
 ```
 
 ## Converting a CSV to ePADD output
@@ -31,12 +31,12 @@ python epadd_utils/parse-email-list.py /path/to/text/file.txt /destination/outpu
 Run the following command, specifying your desired input and output files:
 
 ```
-python epadd_utils/parse-csv.py /path/to/csv.csv /destination/output.txt
+python epadd_utils/parse_csv.py /path/to/csv.csv /destination/output.txt
 ```
 
 You can optionally specify a delimiter for subsections in the CSV, if needed (```|``` is default):
 
 ```
 # use a semicolon as a delimiter
-python epadd_utils/parse-csv.py --delimiter ";" /path/to/csv.csv /destination/output.txt
+python epadd_utils/parse_csv.py --delimiter ";" /path/to/csv.csv /destination/output.txt
 ```
